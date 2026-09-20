@@ -1,5 +1,9 @@
-let name = "Kumar";
-const age = 35;
-let isDeveloper = true;
+const skills = ['HTML', 'CSS', 'JavaScript'];
 
-console.log(`${name} is ${age} years old and is a developer: ${isDeveloper}`);
+function listSkills(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(`Skill ${i + 1}: ${arr[i]}`);
+  }
+}
+
+listSkills(skills);
