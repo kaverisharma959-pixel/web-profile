@@ -1,9 +1,8 @@
-const skills = ['HTML', 'CSS', 'JavaScript'];
+console.log("JavaScript is working!");
 
-function listSkills(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    console.log(`Skill ${i + 1}: ${arr[i]}`);
-  }
-}
+const button = document.getElementById("changeText");
+const output = document.getElementById("output");
 
-listSkills(skills);
+button.addEventListener("click", function() {
+  output.textContent = "Text Changed!";
+});

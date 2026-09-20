@@ -1,41 +1,41 @@
 const http = require('http');
 const fs = require('fs');
+const path = require('path');
 
 const PORT = 3000;
 
 const server = http.createServer((req, res) => {
+  let filePath;
+
   if (req.url === '/') {
-    fs.readFile('./index.html', (err, data) => {
-      if (err) {
-        res.statusCode = 500;
-        res.end('Error loading index.html');
-        return;
-      }
-
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'text/html');
-      res.end(data);
-    });
-  } 
-  else if (req.url === '/style.css') {
-    fs.readFile('./style.css', (err, data) => {
-      if (err) {
-        res.statusCode = 404;
-        res.end('CSS not found');
-        return;
-      }
-
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'text/css');
-      res.end(data);
-    });
-  } 
-  else {
-    res.statusCode = 404;
-    res.end('Page not found');
+    filePath = path.join(__dirname, 'index.html');
+  } else {
+    filePath = path.join(__dirname, req.url);
   }
+
+  const ext = path.extname(filePath);
+
+  let contentType = 'text/html';
+
+  if (ext === '.css') {
+    contentType = 'text/css';
+  } else if (ext === '.js') {
+    contentType = 'application/javascript';
+  }
+
+  fs.readFile(filePath, (err, content) => {
+    if (err) {
+      res.statusCode = 404;
+      res.end('404 - File Not Found');
+      return;
+    }
+
+    res.statusCode = 200;
+    res.setHeader('Content-Type', contentType);
+    res.end(content);
+  });
 });
 
 server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
+  console.log(`Server running at http://localhost:${PORT}`);
 });
