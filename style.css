@@ -1,20 +1,110 @@
-body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #1e3c72, #2a5298);
-  color: #fff;
-  margin: 0;
-  padding: 20px;
+/* Basic styling */
+
+* {
+  box-sizing: border-box;
 }
 
-header {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
+
+/* Header */
+
+.banner {
+  background: #3498db;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  animation: slide 1s ease-in-out forwards;
+}
+
+/* Navigation */
+
+nav {
+  background: #222;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Sections */
 
 section {
-  margin-top: 30px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
 }
 
-ul {
-  list-style: square;
-  padding-left: 20px;
+/* Flexbox */
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Grid */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+/* Boxes */
+
+.box {
+  background: #3498db;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.project {
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+/* Animation */
+
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
 }

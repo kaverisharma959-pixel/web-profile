@@ -1,62 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Developer Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Developer Profile</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>My Developer Profile</h1>
-    </header>
+  <header class="banner">
+    <h1>My Developer Profile</h1>
+    <p>Full Stack Web Development Learner</p>
+  </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
 
-    <main>
+  <main>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am a computer engineering student interested in
-                full stack web development, artificial intelligence,
-                and machine learning.
-            </p>
-        </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hello! I am a Computer Engineering student learning
+        Full Stack Web Development, Python, JavaScript and Node.js.
+      </p>
+    </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
+    <section id="skills">
+      <h2>My Skills</h2>
 
-            <article>
-                <h3>Developer Portfolio</h3>
-                <p>
-                    A personal developer portfolio created using
-                    HTML, CSS, and Node.js.
-                </p>
-            </article>
+      <div class="grid-container">
+        <article class="box">
+          <h3>HTML</h3>
+          <p>Semantic HTML5 and webpage structure.</p>
+        </article>
 
-            <article>
-                <h3>AI Digital Twin</h3>
-                <p>
-                    An AI-based system designed to track productivity
-                    and provide personalized learning insights.
-                </p>
-            </article>
+        <article class="box">
+          <h3>CSS</h3>
+          <p>Flexbox, Grid, responsive design and animations.</p>
+        </article>
 
-        </section>
+        <article class="box">
+          <h3>Node.js</h3>
+          <p>Basic server-side development.</p>
+        </article>
+      </div>
+    </section>
 
-    </main>
+    <section id="projects">
+      <h2>My Projects</h2>
 
-    <footer>
-        <p>&copy; 2026 My Developer Profile</p>
-    </footer>
+      <article class="project">
+        <h3>Developer Profile Website</h3>
+        <p>
+          A personal website built using HTML5, CSS and Node.js.
+        </p>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 My Developer Profile</p>
+  </footer>
 
 </body>
 </html>
